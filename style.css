@@ -1,11 +1,33 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #e21;
+  --letras: #000;
+  --fundo1: #f0f0f0;
+  --fundo2: #fff;
+  --vantagens: rgb(0, 0, 0, 0.3);
+  --onda-clara: url(./imgs/onda-clara.svg);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-primaria: #e21;
+    --cor-primaria-escura: #e21;
+    --letras: #fff;
+    --fundo1: #111;
+    --fundo2: #000;
+    --vantagens: rgb(255, 255, 255, 0.3);
+    --onda-escura: url(./imgs/onda-escura.svg);
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   display: grid;
   gap: 60px;
-  background-color: #f0f0f0;
+  background-color: var(--fundo1);
   justify-items: center;
   margin-top: 60px;
+  color: var(--letras);
 }
 
 header {
@@ -23,7 +45,7 @@ li {
 }
 
 .menu li a:hover {
-  border: 0.2rem solid red;
+  border: 0.2rem solid var(--cor-primaria);
 }
 
 h1,
@@ -47,8 +69,8 @@ h3 {
 }
 
 .menu a {
-  color: #000;
-  background-color: #fff;
+  color: var(--letras);
+  background-color: var(--fundo2);
   padding: 15px 30px;
   border-radius: 4px;
   text-transform: uppercase;
@@ -59,11 +81,10 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 70rem;
-  
 }
 
 .block1 {
-  background-color: #fff;
+  background-color: var(--fundo2);
   display: grid;
   gap: 20px;
   text-align: right;
@@ -79,7 +100,7 @@ h3 {
 
 .block1::after {
   content: "";
-  background-color: red;
+  background-color: var(--cor-primaria);
   width: 60px;
   height: 4px;
   position: absolute;
@@ -89,7 +110,7 @@ h3 {
 
 .botao {
   text-decoration: none;
-  background-color: red;
+  background-color: var(--cor-primaria);
   color: white;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -97,7 +118,7 @@ h3 {
 }
 
 .botao:hover {
-  background-color: rgb(165, 9, 9);
+  background-color: var(--cor-primaria-escura);
   transition: 0.3s;
 }
 
@@ -108,10 +129,10 @@ h3 {
 .vantagens {
   font-size: 60px;
   text-transform: uppercase;
-  color: rgb(0, 0, 0, 0.3);
+  color: var(--vantagens);
   text-align: right;
   padding: 45px;
-  background-image: url("./imgs/onda.svg");
+  background-image: var(--onda-escura);
 }
 
 .infos {
@@ -119,7 +140,7 @@ h3 {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #fff;
+  background-color: var(--fundo2);
 }
 
 .infos p {
@@ -130,12 +151,12 @@ h3 {
 }
 
 .infos li:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo1);
 }
 
 .eletrica {
   position: relative;
-  padding: 1.2rem .5rem;
+  padding: 1.2rem;
   margin-left: 30px;
 }
 
@@ -157,7 +178,7 @@ h3 {
 
 .kms {
   position: relative;
-  padding: 1.2rem .5rem;
+  padding: 1.2rem;
   margin-left: 30px;
 }
 
@@ -168,7 +189,7 @@ h3 {
 .kms::before {
   content: "";
   display: block;
-  background-image: url("./imgs/eletrica.svg");
+  background-image: url("./imgs/velocidade.svg");
   background-repeat: no-repeat;
   padding-right: 15px;
   width: 1.5rem;
@@ -179,7 +200,7 @@ h3 {
 
 .rastreador {
   position: relative;
-  padding: 1.2rem .5rem;
+  padding: 1.2rem;
   margin-left: 30px;
 }
 
@@ -200,13 +221,13 @@ h3 {
 }
 
 .infos li:hover {
-  border-left: 4px solid red;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 footer {
   font-size: 20px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--fundo2);
   text-align: center;
   padding: 30px;
   box-sizing: border-box;
@@ -227,7 +248,7 @@ footer {
 
   .block1::after {
     content: "";
-    background-color: red;
+    background-color: var(--cor-primaria);
     width: 4px;
     height: 60px;
     position: absolute;
